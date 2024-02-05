@@ -2,8 +2,8 @@
 #include <locale.h>
 #include <stdlib.h>
 
-void calcQ (int elementaryChargeCoefficient, int elementaryChargeExponent);
-void calcN (int elementaryChargeCoefficient, int elementaryChargeExponent);
+void calcQ (float elementaryChargeCoefficient, int elementaryChargeExponent);
+void calcN (float elementaryChargeCoefficient, int elementaryChargeExponent);
 
 int main(void)
 {
@@ -32,6 +32,14 @@ int main(void)
   return 0;
 }
 
-void calcQ (int elementaryChargeCoefficient, int elementaryChargeExponent) {}
+void calcQ (float elementaryChargeCoefficient, int elementaryChargeExponent) {
+  float coefficientN;
 
-void calcN (int elementaryChargeCoefficient, int elementaryChargeExponent) {}
+
+  printf("\n Q = N . E");
+  printf("Forneça o coeficiente de N");
+}
+
+void calcN (float elementaryChargeCoefficient, int elementaryChargeExponent) {
+  printf("\n N = Q : E");
+}
