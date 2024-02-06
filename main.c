@@ -2,8 +2,11 @@
 #include <locale.h>
 #include <stdlib.h>
 
-void calcQ (float elementaryChargeCoefficient, int elementaryChargeExponent);
-void calcN (float elementaryChargeCoefficient, int elementaryChargeExponent);
+const float ELEMENTARY_CHARGE_COEFFICIENT = 1.6;
+const int ELEMENTARY_CHARGE_EXPONENT = -19;
+
+void calcQ ();
+void calcN ();
 
 int main(void)
 {
@@ -13,26 +16,22 @@ int main(void)
 
   int operation;
 
-  float elementaryChargeCoefficient = 1.6;
-  int elementaryChargeExponent = -19;
-
-
   do {
     printf(" ");
     scanf("%i", &operation);
   } while (operation != 1 && operation != 2);
 
   if ( operation == 1 ) {
-    calcQ(elementaryChargeCoefficient, elementaryChargeExponent);
+    calcQ();
   } else {
-    calcN(elementaryChargeCoefficient, elementaryChargeExponent);
+    calcN();
   }
 
 
   return 0;
 }
 
-void calcQ (float elementaryChargeCoefficient, int elementaryChargeExponent) {
+void calcQ () {
   float coefficientN;
   int exponentN;
 
@@ -44,13 +43,13 @@ void calcQ (float elementaryChargeCoefficient, int elementaryChargeExponent) {
   printf(" Forneça o expoente de N\n ");
   scanf("%i", &exponentN);
 
-  float coefficientQ = elementaryChargeCoefficient * coefficientN;
-  int exponentQ = elementaryChargeExponent + exponentN;
+  float coefficientQ = ELEMENTARY_CHARGE_COEFFICIENT * coefficientN;
+  int exponentQ = ELEMENTARY_CHARGE_EXPONENT + exponentN;
 
-  printf("\n Q = %.3f x 10^%i . %.1f x 10^%i", coefficientN, exponentN, elementaryChargeCoefficient, elementaryChargeExponent);
+  printf("\n Q = %.3f x 10^%i . %.1f x 10^%i", coefficientN, exponentN, ELEMENTARY_CHARGE_COEFFICIENT, ELEMENTARY_CHARGE_EXPONENT);
   printf("\n Q = %.3f x 10^%i", coefficientQ, exponentQ);
 }
 
-void calcN (float elementaryChargeCoefficient, int elementaryChargeExponent) {
+void calcN () {
   printf("\n N = Q : E");
 }
