@@ -51,5 +51,20 @@ void calcQ () {
 }
 
 void calcN () {
+  float coefficientQ;
+  int exponentQ;
+
   printf("\n N = Q : E");
+
+  printf("\n Forneça o coeficiente de Q\n ");
+  scanf("%f", &coefficientQ);
+
+  printf(" Forneça o expoente de Q\n ");
+  scanf("%i", &exponentQ);
+
+  float coefficientN = coefficientQ / ELEMENTARY_CHARGE_COEFFICIENT;
+  int exponentN = exponentQ - ELEMENTARY_CHARGE_EXPONENT;
+
+  printf("\n Q = %.3f x 10^%i : %.1f x 10^19", coefficientQ, exponentQ, ELEMENTARY_CHARGE_COEFFICIENT);
+  printf("\n Q = %.3f x 10^%i", coefficientN, exponentN);
 }
