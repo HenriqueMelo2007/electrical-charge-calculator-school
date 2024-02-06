@@ -9,7 +9,7 @@ int main(void)
 {
   setlocale(LC_ALL, "Portuguese_Brazil");
 
-  printf(" CALCULADORA CARGA EL�TRICA\n\n ESCOLHA O QUE DESEJA CALCULAR:\n\n 1 - Q ( CARGA EL�TRICA )\n 2 - N ( QUANTIDADE DE EL�TRONS )\n\n");
+  printf(" CALCULADORA CARGA ELÉTRICA\n\n ESCOLHA O QUE DESEJA CALCULAR:\n\n 1 - Q ( CARGA ELÉTRICA )\n 2 - N ( QUANTIDADE DE ELÉTRONS )\n\n");
 
   int operation;
 
