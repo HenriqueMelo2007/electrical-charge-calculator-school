@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <locale.h>
 #include <stdlib.h>
+#include <math.h>
 
 const float ELEMENTARY_CHARGE_COEFFICIENT = 1.6;
 const int ELEMENTARY_CHARGE_EXPONENT = -19;
 
 void calcQ ();
 void calcN ();
+void cientificNotation (float *coefficient, int *exponent);
 
 int main(void)
 {
@@ -46,6 +48,8 @@ void calcQ () {
   float coefficientQ = ELEMENTARY_CHARGE_COEFFICIENT * coefficientN;
   int exponentQ = ELEMENTARY_CHARGE_EXPONENT + exponentN;
 
+  cientificNotation(&coefficientQ, &exponentQ);
+
   printf("\n Q = %.3f x 10^%i . %.1f x 10^%i", coefficientN, exponentN, ELEMENTARY_CHARGE_COEFFICIENT, ELEMENTARY_CHARGE_EXPONENT);
   printf("\n Q = %.3f x 10^%i", coefficientQ, exponentQ);
 }
@@ -65,6 +69,26 @@ void calcN () {
   float coefficientN = coefficientQ / ELEMENTARY_CHARGE_COEFFICIENT;
   int exponentN = exponentQ - ELEMENTARY_CHARGE_EXPONENT;
 
-  printf("\n Q = %.3f x 10^%i : %.1f x 10^19", coefficientQ, exponentQ, ELEMENTARY_CHARGE_COEFFICIENT);
-  printf("\n Q = %.3f x 10^%i", coefficientN, exponentN);
+  cientificNotation(&coefficientN, &exponentN);
+
+  printf("\n N = %.3f x 10^%i : %.1f x 10^19", coefficientQ, exponentQ, ELEMENTARY_CHARGE_COEFFICIENT);
+  printf("\n N = %.3f x 10^%i", coefficientN, exponentN);
+}
+
+void cientificNotation (float *coefficient, int *exponent) {
+  float moduleCoefficient = fabs(*coefficient);
+  
+  while (moduleCoefficient >= 10) {
+    moduleCoefficient /= 10;
+    *coefficient /= 10;
+
+    *exponent += 1;
+  }
+
+  while (moduleCoefficient < 1) {
+    moduleCoefficient *= 10;
+    *coefficient *= 10;
+
+    *exponent -= 1;
+  }
 }
