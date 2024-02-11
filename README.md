@@ -24,3 +24,7 @@ Where:
 - N is the number of electrons.
 - Q is a total electrical charge.
 - E is the elementary charge (1.6 x 10^19 Coulombs).
+
+## Example of using the program on a cell phone with the application "Cxxdroid - C/C++ compiler IDE:"
+
+![Demonstration of using the calculator](preview.jpg)
