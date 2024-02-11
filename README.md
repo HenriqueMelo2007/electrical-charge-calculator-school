@@ -27,4 +27,5 @@ Where:
 
 ## Example of using the program on a cell phone with the application "Cxxdroid - C/C++ compiler IDE:"
 
+
 ![Demonstration of using the calculator](preview.jpg)
